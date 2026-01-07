@@ -14,6 +14,7 @@ const getCurrentTime = new adk_1.FunctionTool({
         return { status: 'success', report: `The current time in ${city} is 10:30 AM` };
     },
 });
+<<<<<<< HEAD
 const sayHello = new adk_1.FunctionTool({
     name: 'say_hello',
     description: 'Say hello to the user.',
@@ -31,5 +32,14 @@ exports.rootAgent = new adk_1.LlmAgent({
     instruction: `You are a helpful assistant.
                 Use the 'getCurrentTime' and 'say_hello' tool for this purpose.`,
     tools: [getCurrentTime, sayHello],
+=======
+exports.rootAgent = new adk_1.LlmAgent({
+    name: 'hello_time_agent',
+    model: 'gemini-2.5-flash',
+    description: 'Tells the current time in a specified city.',
+    instruction: `You are a helpful assistant that tells the current time in a city.
+                Use the 'getCurrentTime' tool for this purpose.`,
+    tools: [getCurrentTime],
+>>>>>>> f2d3988084e0b5926712a9faed8b5f32d70c8b60
 });
 //# sourceMappingURL=agent.js.map
